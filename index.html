@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERGUARD - Security Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div id="home">
+    <h1>🛡️ CYBERGUARD</h1>
+    <h2>Cybersecurity Mobile App Management System</h2>
+    <p>Secure • Monitor • Protect</p>
+    <button onclick="showLogin()">Get Started</button>
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="login" style="display:none;">
+    <h1>Admin Login</h1>
+
+    <input id="username" type="text" placeholder="Username">
+    <br><br>
+
+    <input id="password" type="password" placeholder="Password">
+    <br><br>
+
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="dashboard" style="display:none;">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>🛡️ CYBERGUARD</h2>
+        <p>ADMIN PANEL</p>
+
+        <button onclick="showSection('overview')">Dashboard</button>
+        <button onclick="showSection('devices')">Device Management</button>
+        <button onclick="showSection('apps')">App Management</button>
+        <button onclick="showSection('threats')">Threat Detection</button>
+        <button onclick="showSection('reports')">Security Reports</button>
+        <button onclick="showSection('settings')">Settings</button>
+        <button onclick="logout()">Logout</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- DASHBOARD OVERVIEW -->
+        <section id="overview" class="page">
+
+            <h1>Admin Dashboard</h1>
+            <p>Welcome to CYBERGUARD Security Center</p>
+
+            <h2>Security Overview</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Devices</h3>
+                    <h1 id="totalDevices">25</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Managed Apps</h3>
+                    <h1 id="totalApps">120</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Threat Alerts</h3>
+                    <h1 id="totalThreats">03</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Security Score</h3>
+                    <h1 id="securityScore">95%</h1>
+                </div>
+
+            </div>
+
+            <h2>System Status</h2>
+            <p>Device Monitoring: Active (Demo)</p>
+            <p>App Security: Protected (Demo)</p>
+            <p>Threat Detection: Enabled (Demo)</p>
+
+        </section>
+
+        <!-- DEVICE MANAGEMENT -->
+        <section id="devices" class="page" style="display:none;">
+
+            <h1>Device Management</h1>
+
+            <div class="card">
+                <h2>Register New Device</h2>
+
+                <input type="text" id="deviceName" placeholder="Device Name">
+                <br><br>
+
+                <input type="text" id="deviceId" placeholder="Device ID">
+                <br><br>
+
+                <select id="deviceOS">
+                    <option value="Android">Android</option>
+                    <option value="iOS">iOS</option>
+                </select>
+                <br><br>
+
+                <button onclick="addDevice()">Add Device</button>
+            </div>
+
+            <h2>Registered Devices</h2>
+
+            <div id="deviceList">
+                <div class="card">
+                    <h3>Demo Android Device</h3>
+                    <p>ID: DEMO001</p>
+                    <p>OS: Android</p>
+                    <p>Status: Sample Device</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- APP MANAGEMENT -->
+        <section id="apps" class="page" style="display:none;">
+
+            <h1>Application Management</h1>
+
+            <div class="card">
+                <h2>Register Application</h2>
+
+                <input type="text" id="appName" placeholder="Application Name">
+                <br><br>
+
+                <input type="text" id="appId" placeholder="Application ID">
+                <br><br>
+
+                <button onclick="addApp()">Add Application</button>
+            </div>
+
+            <h2>Managed Applications</h2>
+            <div id="appList"></div>
+
+        </section>
+
+        <!-- THREAT DETECTION -->
+        <section id="threats" class="page" style="display:none;">
+
+            <h1>Threat Detection</h1>
+
+            <div class="card">
+                <h2>Security Monitoring</h2>
+
+                <p>Monitoring Status: Demo Mode</p>
+                <p>Threat Detection: Enabled</p>
+                <p>Live Device Scan: Not Connected</p>
+
+                <button onclick="checkSecurity()">Check Security</button>
+
+                <p id="threatMessage"></p>
+            </div>
+
+        </section>
+
+        <!-- SECURITY REPORTS -->
+        <section id="reports" class="page" style="display:none;">
+
+            <h1>Security Reports</h1>
+
+            <div class="card">
+                <h2>System Report</h2>
+
+                <p>Security Score: <span id="reportScore">95%</span></p>
+                <p>Application Status: Protected (Demo)</p>
+                <p>Report Type: Demo Data</p>
+
+                <button onclick="downloadReport()">Download Report</button>
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+        <section id="settings" class="page" style="display:none;">
+
+            <h1>Settings</h1>
+
+            <div class="card">
+                <h2>System Configuration</h2>
+
+                <p>Application: CYBERGUARD</p>
+                <p>Administrator: Admin</p>
+                <p>Theme: Dark Mode</p>
+                <p>Security Mode: Demo</p>
+                <p>Storage: Browser Local Storage</p>
+                <p>Version: 1.0</p>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
